@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    @include("includes.bootstrap")
+  </head>
+  <body>
+    <div class="container">
+      <br>
+      <div class="card mx-auto bg-dark" style="width: 18rem;">
+        <div class="card-header">
+          Select Assembly session:
+        </div>
+          <ul class="list-group list-group-flush">
+            @each(each in availableSessions)
+            <a href="{{route("legSession.update", {num: each})}}">
+              <li class="text-center list-group-item">{{each}}</li>
+            </a>
+            @endeach
+          </ul>
+
+      </div>
+    </div>
+  </body>
+</html>

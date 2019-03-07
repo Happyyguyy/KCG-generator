@@ -12,7 +12,12 @@
 @section("content")
 <div class="row">
   <div class="col-sm-4">
-    <a href="{{ route("generator", {id: data.id}) }}"><button class="col btn btn-primary" id="genReportCard">Make Report Card</button></a>
+    <div class="row">
+      <a href="{{ route("generator", {id: data.id}) }}" class="col"><button class=" col btn btn-primary" id="genReportCard">Make Report Card</button></a>
+    </div>
+    <div class="row">
+      <a href="#{{-- todo: route("profile.delete", {id: data.id})--}}" class="col"><button class="col btn btn-warning" id="archiveProfile">Archive</button></a>
+    </div>
   </div>
   <div class="col">
     @include("includes.form")

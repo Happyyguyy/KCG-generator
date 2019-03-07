@@ -1,4 +1,4 @@
-<form action="{{route("update", {id:data.id})}}" method="post" id="legForm">
+<form action="{{route("profile.update", {id:data.id})}}" method="post" id="legForm">
   {{ csrfField() }}
   <div class="form-row">
     <div class="col-sm form-group">
@@ -91,7 +91,7 @@
       <button type="reset" class="btn-warning btn col">Reset</button>
     </div>
     <div class="col-sm">
-      <button type="submit" class="btn btn-primary col">Commit</button>
+      <button type="submit" class="btn btn-primary col">Update</button>
     </div>
   </div>
 </form>

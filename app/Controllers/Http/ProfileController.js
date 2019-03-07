@@ -3,6 +3,7 @@ const Firebase = use("Perafan/FirebaseAdmin")
 
 class ProfileController {
   async index({view, params}) {
+    console.log("index ", params.id);
     let data = await Firebase.getDataById(params.id)
 
     let selected = this.setDefaults(data)
@@ -10,9 +11,10 @@ class ProfileController {
 
     return
   }
-  
+
   async update({request, view, params, response}) {
 
+  console.log("update ", params.id);
   let data = request.all()
 
   delete data._csrf
@@ -27,7 +29,7 @@ class ProfileController {
     console.log(err);
   }
 
-  return response.route("profile", {id:params.id})
+  return response.route("profile.show", {id:params.id})
   // return view.render('templates.profile', {data})
 }
 

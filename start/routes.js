@@ -16,8 +16,16 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+Route.group(() => {
+
 Route.get('/', "HomeController.index")
 Route.get("/list", "ListController.index").as("list")
 Route.get("/profile/:id", "ProfileController.index").as("profile.show")
 Route.post("/profile/:id", "ProfileController.update").as("profile.update")
 Route.get("/generate/:id", "GeneratorController.index").as("generator")
+
+})
+// .middleware(["legSetter"])
+
+Route.get("/session", "LegSessionController.index").as("legSession.show")
+Route.get("/session/:num", "LegSessionController.update").as("legSession.update")

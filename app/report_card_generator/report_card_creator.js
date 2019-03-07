@@ -31,7 +31,7 @@ class Generator {
     if (!this.init) {
       await this.getConfig(this.config)
     }
-    var portraitPromise = Jimp.read("https://leg.colorado.gov/sites/default/files/styles/width_300/public/2019a_rsz_arndt-co-17.jpg?itok=JjJAv3JQ")  // TODO: get img from online
+    var portraitPromise = Jimp.read(data.img_link)  // TODO: get img from online
     var templatePromise = Jimp.read("App/report_card_generator/kcggrading_blank.png")
 
 
