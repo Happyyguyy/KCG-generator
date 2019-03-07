@@ -18,4 +18,6 @@ const Route = use('Route')
 
 Route.get('/', "HomeController.index")
 Route.get("/list", "ListController.index").as("list")
-Route.get('/profile/:id', "ProfileController.index")
+Route.get("/profile/:id", "ProfileController.index").as("profile.show")
+Route.post("/profile/:id", "ProfileController.update").as("profile.update")
+Route.get("/generate/:id", "GeneratorController.index").as("generator")
