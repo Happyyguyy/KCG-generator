@@ -17,7 +17,5 @@
 const Route = use('Route')
 
 Route.get('/', "HomeController.index")
-Route.get('/:dfd', "ProfileController.index")
-// Route.get('/:dfd', ({view, params}) => {
-//   return view.render("home", {id: params.dfd})
-// })
+Route.get("/list", "ListController.index").as("list")
+Route.get('/profile/:id', "ProfileController.index")

@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    @include("includes.bootstrap")
-    <title>asdf</title>
+    @section("head")
+      @include("includes.bootstrap")
+    @endsection
   </head>
   <body>
     @include("includes.navbar")
-    <div class="container">
-      @!section("content")
+    <header class="header container">
+      @section("header")
+      @endsection
+    </header>
+      <div class="container">
+        @!section("content")
+      </div>
     </div>
   </body>
+  @section("tail")
+  @endsection
 </html>

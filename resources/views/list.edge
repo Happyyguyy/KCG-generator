@@ -1,0 +1,12 @@
+@layout('layouts.default')
+
+
+@section("header")
+  <h3>List of things</h3>
+@endsection
+@section("content")
+<div class="list-group">
+    @!each(entry in data, include = "includes.list-item")
+    {{-- @each({fis}) --}}
+</div>
+@endsection

@@ -1,5 +1,28 @@
 @layout("layouts.default")
 
+@section("head")
+  @super
+@endsection
+
+@section("header")
+  <h1>{{ data.name }}</h1>
+    <h4 class="text-muted"><small>last updated: {{ data.last_updated }}</small></h4>
+@endsection
+
 @section("content")
-  @include("includes.list-item")
+<div class="row">
+  <div class="col-sm-4">
+    <a href="{{ route("generator", {id: data.id}) }}"><button class="col btn btn-primary" id="genReportCard">Make Report Card</button></a>
+  </div>
+  <div class="col">
+    @include("includes.form")
+  </div>
+</div>
+<br />
+<br>
+<br>
+@endsection
+
+@section("tail")
+{{ script("profile/profile.js")}}
 @endsection
