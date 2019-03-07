@@ -1,0 +1,17 @@
+<a href="{{ route("profile", {id: entry.id}) }}" class="list-group-item d-flex list-group-item-action">
+    <div class="mx-auto p-2 flex-grow-1 bd-highlight">
+        {{entry.title}} {{entry.name}}
+    </div>
+    <div class="mx-auto p-2 bd-highlight col-1 text-center flex-shrink-2">
+        District {{entry.district}}
+    </div>
+    <div class="mx-auto p-2 bd-highlight col-1 text-center flex-shrink-2">
+        {{entry.grades.Voting}}
+    </div>
+    <div class="mx-auto p-2 bd-highlight col-1 text-center flex-shrink-2">
+        {{entry.grades.Donation}}
+    </div>
+    <div class="mx-auto p-2 bd-highlight col-1 text-center flex-shrink-2">
+        {{entry.grades.Rhetoric}}
+    </div>
+</a>

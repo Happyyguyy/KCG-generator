@@ -1,0 +1,98 @@
+<form action="{{route("update", {id:data.id})}}" method="post" id="legForm">
+  {{ csrfField() }}
+  <div class="form-row">
+    <div class="col-sm form-group">
+      <label for="first">First Name</label>
+      <input type="text" class="form-control" value="{{data.first}}" id="first" name="first"/>
+    </div>
+    <div class="col-sm form-group">
+      <label for="last">Last Name</label>
+      <input type="text" class="form-control" value="{{data.last}}" id="last" name="last"/>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="party">Party</label>
+        <select class="form-control" id="party" name="party">
+          <option value="Democrat" {{selected.democrat}}>Democrat</option>
+          <option value="Republican" {{selected.republican}}>Republican</option>
+          <option value="Independent"{{selected.independent}}>Independent</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <select class="form-control" id="title" name="title">
+          <option value="Representative" {{selected.representative}}>Representative</option>
+          <option value="Senator" {{selected.senator}}>Senator</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm">
+      <label for="district">District</label>
+      <input type="text" class="form-control" value="{{data.district}}" id="district" name="district" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-sm">
+      <div class="form-group">
+        <label for="donation">Donation</label>
+        <input type="text" class="form-control" value="{{data.grades.Donation}}" id="Donation" name="grades.Donation"/>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+        <label for="rhetoric">Rhetoric</label>
+        <input type="text" class="form-control" value="{{data.grades.Rhetoric}}" id="Rhetoric" name="grades.Rhetoric"/>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+        <label for="voting">Voting</label>
+        <input type="text" class="form-control" value="{{data.grades.Voting}}" id="Voting" name="grades.Voting"/>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-sm">
+      <div class="form-group">
+        <label for="phone_num">Phone Num.</label>
+        <input type="text" class="form-control" value="{{data.phone_num}}" id="phone_num" name="phone_num"/>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" value="{{data.email}}" id="email" name="email"/>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col">
+      <div class="form-group">
+        <label for="img_link">Portrait Link</label>
+        <input type="text" class="form-control" value="{{data.img_link}}" id="img_link" name="img_link"/>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col">
+      <div class="form-group">
+        <label for="leg_page">Link to leg.colorado.gov</label>
+        <input type="text" class="form-control" value="{{data.leg_page}}" id="leg_page" name="leg_page" />
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-sm">
+      <button type="reset" class="btn-warning btn col">Reset</button>
+    </div>
+    <div class="col-sm">
+      <button type="submit" class="btn btn-primary col">Commit</button>
+    </div>
+  </div>
+</form>
+{{ script("profile.profile") }}
