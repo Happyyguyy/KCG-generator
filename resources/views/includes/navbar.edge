@@ -13,13 +13,10 @@
         <a class="nav-link" href="{{route('list')}}">List</a>
       </li>
       <li class="nav-item">
-        <form class="form-inline my-2 my-lg-0">
-          <select class="custom-select">
-            @each(each in sessions)
-            <option value="{{each}}">{{each}}</option>
-            @endeach
-          </select>
-        </form>
+        <a class="nav-link" href="{{route('list')}}">New</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('list')}}">MultiView</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" tabindex="-1">

@@ -1,0 +1,32 @@
+<div class="card m-1 mb-4">
+  <div class="row">
+    <a href="#" class="col">
+      <div class="col">
+        <h1>Options</h1>
+      </div>
+    </a>
+  </div>
+  <div class="card">
+    <form class="form-row" method="GET" action="{{route("list")}}">
+      {{ csrfField() }}
+      <select class="custom-select m-2 mx-3" name="session">
+        <option selected value="71">Session:</option>
+        @each(each in availableSessions)
+          <option value="{{each}}">{{each}}</option>
+        @endeach
+      </select>
+      <select class="custom-select m-2 mx-3" name="house">
+        <option selected value="both">House:</option>
+        <option value="Senate">Senate</option>
+        <option value="Representatives">House of Representative</option>
+      </select>
+      <select class="custom-select m-2 mx-3" name="party">
+        <option selected value="all">Party:</option>
+        <option value="Democrat">Democrat</option>
+        <option value="Republican">Republican</option>
+        <option value="Independent">Independent</option>
+      </select>
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+  </div>
+</div>

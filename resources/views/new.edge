@@ -11,14 +11,6 @@
 
 @section("content")
 <div class="row">
-  <div class="col-md-4">
-    <div class="row m-2">
-      <a href="{{ route("generator", {id: data.id}) }}" class="col btn btn-primary" id="genReportCard">Make Report Card</a>
-    </div>
-    <div class="row m-2">
-      <a href="#{{-- todo: route("profile.delete", {id: data.id})--}}" class="col btn btn-warning" id="archiveProfile">Archive</button></a>
-    </div>
-  </div>
   <div class="col">
     @include("includes.form")
   </div>

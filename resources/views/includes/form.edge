@@ -1,68 +1,143 @@
 <form action="{{route("profile.update", {id:data.id})}}" method="post" id="legForm">
   {{ csrfField() }}
   <div class="form-row">
-    <div class="col-sm form-group">
+    <div class="col-md form-group">
       <label for="first">First Name</label>
       <input type="text" class="form-control" value="{{data.first}}" id="first" name="first"/>
     </div>
-    <div class="col-sm form-group">
+    <div class="col-md form-group">
       <label for="last">Last Name</label>
       <input type="text" class="form-control" value="{{data.last}}" id="last" name="last"/>
     </div>
   </div>
   <div class="form-row">
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <div class="form-group">
         <label for="party">Party</label>
-        <select class="form-control" id="party" name="party">
+        <select class="form-control custom-select" id="party" name="party">
           <option value="Democrat" {{selected.democrat}}>Democrat</option>
           <option value="Republican" {{selected.republican}}>Republican</option>
           <option value="Independent"{{selected.independent}}>Independent</option>
         </select>
       </div>
     </div>
-    <div class="col-sm">
+    <div class="col-md">
       <div class="form-group">
         <label for="title">Title</label>
-        <select class="form-control" id="title" name="title">
+        <select class="form-control custom-select" id="title" name="title">
           <option value="Representative" {{selected.representative}}>Representative</option>
           <option value="Senator" {{selected.senator}}>Senator</option>
         </select>
       </div>
     </div>
-    <div class="col-sm">
+    <div class="col-md">
       <label for="district">District</label>
       <input type="text" class="form-control" value="{{data.district}}" id="district" name="district" />
     </div>
   </div>
   <div class="form-row">
-    <div class="col-sm">
-      <div class="form-group">
-        <label for="donation">Donation</label>
-        <input type="text" class="form-control" value="{{data.grades.Donation}}" id="Donation" name="grades.Donation"/>
+    <div class="col-md border rounded m-1">
+      <label>Donation</label>
+      <div class="form-group pl-3">
+        <div class="row">
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Donation" id="donationA" value="A" {{selected.donation.A}}/>
+            <label class="custom-control-label" for="donationA">A</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Donation" id="donationB" value="B" {{selected.donation.B}}/>
+            <label class="custom-control-label" for="donationB">B</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Donation" id="donationC" value="C" {{selected.donation.C}}/>
+            <label class="custom-control-label" for="donationC">C</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Donation" id="donationD" value="D" {{selected.donation.D}}/>
+            <label class="custom-control-label" for="donationD">D</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Donation" id="donationF" value="F" {{selected.donation.F}}/>
+            <label class="custom-control-label" for="donationF">F</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Donation" id="donationNone" value=" " {{selected.donation.None}}/>
+            <label class="custom-control-label" for="donationNone">∅</label>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-sm">
-      <div class="form-group">
-        <label for="rhetoric">Rhetoric</label>
-        <input type="text" class="form-control" value="{{data.grades.Rhetoric}}" id="Rhetoric" name="grades.Rhetoric"/>
+    <div class="col-md border rounded m-1">
+      <label>Rhetoric</label>
+      <div class="form-group pl-3 row">
+        {{-- <div class="row"> --}}
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Rhetoric" id="rhetoricA" value="A" {{selected.rhetoric.A}}/>
+            <label class="custom-control-label" for="rhetoricA">A</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Rhetoric" id="rhetoricB" value="B" {{selected.rhetoric.B}}/>
+            <label class="custom-control-label" for="rhetoricB">B</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Rhetoric" id="rhetoricC" value="C" {{selected.rhetoric.C}}/>
+            <label class="custom-control-label" for="rhetoricC">C</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Rhetoric" id="rhetoricD" value="D" {{selected.rhetoric.D}}/>
+            <label class="custom-control-label" for="rhetoricD">D</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Rhetoric" id="rhetoricF" value="F" {{selected.rhetoric.F}}/>
+            <label class="custom-control-label" for="rhetoricF">F</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Rhetoric" id="rhetoricNone" value=" " {{selected.rhetoric.None}}/>
+            <label class="custom-control-label" for="rhetoricNone">∅</label>
+          </div>
+        {{-- </div> --}}
       </div>
     </div>
-    <div class="col-sm">
-      <div class="form-group">
-        <label for="voting">Voting</label>
-        <input type="text" class="form-control" value="{{data.grades.Voting}}" id="Voting" name="grades.Voting"/>
+    <div class="col-md border rounded m-1">
+      <label>Voting</label>
+      <div class="form-group pl-3">
+        <div class="row">
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Voting" id="votingA" value="A" {{selected.voting.A}}/>
+            <label class="custom-control-label" for="votingA">A</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Voting" id="votingB" value="B" {{selected.voting.B}}/>
+            <label class="custom-control-label" for="votingB">B</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Voting" id="votingC" value="C" {{selected.voting.C}}/>
+            <label class="custom-control-label" for="votingC">C</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Voting" id="votingD" value="D" {{selected.voting.D}}/>
+            <label class="custom-control-label" for="votingD">D</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Voting" id="votingF" value="F" {{selected.voting.F}}/>
+            <label class="custom-control-label" for="votingF">F</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline col">
+            <input class="custom-control-input" type="radio" name="grades.Voting" id="votingNone" value=" " {{selected.voting.None}}/>
+            <label class="custom-control-label" for="votingNone">∅</label>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="form-row">
-    <div class="col-sm">
+    <div class="col-md">
       <div class="form-group">
         <label for="phone_num">Phone Num.</label>
         <input type="text" class="form-control" value="{{data.phone_num}}" id="phone_num" name="phone_num"/>
       </div>
     </div>
-    <div class="col-sm">
+    <div class="col-md">
       <div class="form-group">
         <label for="email">Email</label>
         <input type="text" class="form-control" value="{{data.email}}" id="email" name="email"/>
@@ -87,11 +162,11 @@
   </div>
 
   <div class="form-row">
-    <div class="col-sm">
+    <div class="col-md">
       <button type="reset" class="btn-warning btn col">Reset</button>
     </div>
-    <div class="col-sm">
-      <button type="submit" class="btn btn-primary col">Update</button>
+    <div class="col-md">
+      <button type="submit" class="btn btn-primary col">Commit/Update</button>
     </div>
   </div>
 </form>

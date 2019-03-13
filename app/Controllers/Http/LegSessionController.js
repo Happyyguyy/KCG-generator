@@ -1,5 +1,6 @@
 'use strict'
 const Firebase = use("Perafan/FirebaseAdmin")
+const legSession 
 
 class LegSessionController {
   async index({view}) {

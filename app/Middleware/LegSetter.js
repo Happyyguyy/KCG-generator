@@ -3,6 +3,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const legs = Config.get("legSession.list")
+
 class LegSetter {
   /**
    * @param {object} ctx

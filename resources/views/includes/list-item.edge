@@ -1,17 +1,37 @@
-<a href="{{ route("profile.show", {id: entry.id}) }}" class="list-group-item d-flex list-group-item-action">
-    <div class="mx-auto p-2 flex-grow-1 bd-highlight">
-        {{entry.title}} {{entry.name}}
+<a href="{{ route("profile.show", {id: entry.id}) }}" class="list-group-item list-group-item-action">
+  <div class="row p-1 justify-content-center">
+    <div class="col-3 col-lg-2">
+      {{entry.title.slice(0,3)}} {{entry.district}}
     </div>
-    <div class="mx-auto p-2 bd-highlight col-1 text-center flex-shrink-2">
-        District {{entry.district}}
+    <div class="col-9 col-lg ">
+      <h6>({{entry.party.slice(0,1)}}) {{entry.name}}</h6>
     </div>
-    <div class="mx-auto p-2 bd-highlight col-1 text-center flex-shrink-2">
+    <div class="col col-lg-1 text-center">
+      @if(entry.grades.Donation == "")
+        <small class="text-muted">∅</small>
+      @elseif(entry.grades.Donation == " ")
+        <small class="text-muted">∅</small>
+      @else
+      {{entry.grades.Donation}}
+      @endif
+    </div>
+    <div class="col col-lg-1 text-center">
+      @if(entry.grades.Rhetoric == "")
+        <small class="text-muted">∅</small>
+      @elseif(entry.grades.Rhetoric == " ")
+        <small class="text-muted">∅</small>
+      @else
+      {{entry.grades.Rhetoric}}
+      @endif
+    </div>
+    <div class="col col-lg-1 text-center">
+      @if(entry.grades.Voting == "")
+        <small class="text-muted">∅</small>
+      @elseif(entry.grades.Voting == " ")
+        <small class="text-muted">∅</small>
+      @else
         {{entry.grades.Voting}}
+      @endif
     </div>
-    <div class="mx-auto p-2 bd-highlight col-1 text-center flex-shrink-2">
-        {{entry.grades.Donation}}
-    </div>
-    <div class="mx-auto p-2 bd-highlight col-1 text-center flex-shrink-2">
-        {{entry.grades.Rhetoric}}
-    </div>
+  </div>
 </a>

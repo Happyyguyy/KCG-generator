@@ -5,8 +5,36 @@
   <h3>List of things</h3>
 @endsection
 @section("content")
-<div class="list-group">
-    @!each(entry in data, include = "includes.list-item")
-    {{-- @each({fis}) --}}
+<div class="row">
+  <div class="col-md">
+    @include("includes.options")
+  </div>
+  <div class="col-md-8">
+    <div class="row mb-3 mr-1 p-2 border rounded">
+      <div class="col-3">District</div>
+      <div class="col-9 col-lg">Name</div>
+      <div class="col col-lg-1 text-center">
+        <abbr title="Donation">D</abbr>
+      </div>
+      <div class="col col-lg-1 text-center">
+        <abbr title="Rhetoric">R</abbr>
+      </div>
+      <div class="col col-lg-1 text-center">
+        <abbr title="Voting">V</abbr>
+      </div>
+    </div>
+    <div class="row">
+      @if(data)
+        <div class="col list-group mx-auto">
+          @!each(entry in data, include = "includes.list-item")
+          {{-- @each({fis}) --}}
+        </div>
+      @else
+        <div class="col-8 mx-auto">
+          <h3>Select Options on the left. Options can be left blank.</h3>
+        </div>
+      @endif
+    </div>
+  </div>
 </div>
 @endsection

@@ -4,6 +4,7 @@ const Firebase = use("Perafan/FirebaseAdmin")
 
 class GeneratorController {
   async index({params, response}) {
+    console.log("GeneratorController.index");
     let data = await Firebase.getDataById(params.id);
     let imgBuffer = await Generator.makeReportCard(data)
     response.type("image/jpeg")
